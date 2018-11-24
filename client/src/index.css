@@ -1,0 +1,80 @@
+* {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*===================================
+CSS ADJUSTMENTS FOR FULL CALENDAR
+====================================*/
+/*Change Month Header in Fully Calendar*/
+.fc h2 {
+  font-size: 2.25em;
+}
+
+/*Full calendar header font size fix*/
+.fc-center h2 {
+  font-size: 1.65em !important;
+}
+
+/*Hide ugly arrows to allow replacement with materialize arrows*/
+.ui-button .ui-icon {
+  display: none;
+}
+
+/*Override to get rid of default font-family*/
+.ui-widget {
+  font-size: 1.1em;
+}
+
+/*Overrrides the days of the week header*/
+div .ui-widget-header {
+  background: none;
+  background-color: #78909c !important;
+}
+
+/*Part 1 of overriding the next and previous arrow button css */
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+  border: none !important;
+  background: none !important;
+  background-color: #78909c !important;
+  font-weight: bold;
+  color: black !important;
+  -webkit-box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
+}
+
+/*Part 2 of overriding the next and previous arrow button css */
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+  background: none !important;
+  background-color: #90a4ae !important;
+  -webkit-box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
+}
+
+/*Display the calendar event*/
+.display-event {
+  position: absolute;
+  z-index: 100;
+  max-width: 440px;
+}
+
+#calendar {
+  margin: 40 0 60 0;
+}

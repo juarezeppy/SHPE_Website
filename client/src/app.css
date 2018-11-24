@@ -1,0 +1,76 @@
+@import './fullCalendarOverrides.css';
+@import './materializeOverride.css';
+
+.social-icons {
+  margin-top: 0px;
+}
+
+.social-icons li {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.parallax-container-landing {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('https://clubs.uci.edu/shpe/wp-content/uploads/2018/05/29683835_1699696656746576_4596213576617751783_n.jpg')
+      no-repeat center center fixed;
+
+  background-position-y: 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: drop-shadow();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-image-overlay-text {
+  text-align: center;
+  color: white;
+  align-self: flex-end;
+  line-height: 1.425em;
+}
+
+.page-banner {
+  background-color: #37474f;
+  margin: 0 0 1.25em 0;
+  color: white;
+  padding: 20px 0 30px 0;
+  text-shadow: 1px 1px 10px rgb(126, 123, 123);
+  font-size: 3em;
+}
+
+.contact-border-right {
+  border-right: 2px solid black;
+}
+
+.about-border-right {
+  border-right: 2px solid black;
+}
+
+.body-content {
+  min-height: calc(100vh - 320px);
+}
+
+.sticky-menu {
+  top: 0px;
+  position: sticky;
+  z-index: 100;
+}
+
+.border-top {
+  border-top: 2px solid white;
+}
+
+.contact-box-right {
+  margin-left: 2em;
+}
+
+.sponsor-image {
+  height: 100px;
+  width: 100px;
+  margin: 0.25em;
+  border-radius: 4px;
+}
+
+@import './mediaQueries.css';

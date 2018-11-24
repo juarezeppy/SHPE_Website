@@ -1,0 +1,33 @@
+@media screen and (max-width: 400px) {
+  .copy-right {
+    font-size: .625em;
+  }
+}
+
+/*Very small Screens*/
+@media screen and (max-width: 500px) {
+  .sponsor-image {
+    height: 65px !important;
+    width: 65px !important;
+    margin: 0.2em !important;
+    border-radius: 4px !important;
+  }
+
+  .copy-right {
+    font-size: .725em;
+  }
+}
+
+/*Small Screens*/
+@media screen and (max-width: 640px) {
+  .contact-border-right {
+    border-right: none !important;
+  }
+  .about-border-right {
+    border-right: none !important;
+  }
+}
+
+/*Mediun Screens*/
+@media screen and (max-width: 768px) {
+}
