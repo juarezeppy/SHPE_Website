@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-class Home extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,15 +13,11 @@ class Home extends Component {
     this.queryEventInterval = null;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getEvents();
     this.queryEventInterval = setInterval(() => {
       this.getEvents();
     }, 60000);
-
-    const script = document.createElement('script');
-    script.src = 'assets/scripts/fullerCalendarInitializer.js';
-    document.body.appendChild(script);
   }
 
   componentWillUnmount() {
@@ -75,40 +71,50 @@ class Home extends Component {
 
   render() {
     const { events } = this.state;
-    let nextEvent;
 
+    let eventsList = events.map(function(event) {
+      return (
+        <a
+          className="list-group-item"
+          href={event.htmlLink}
+          target="_blank"
+          key={event.id}
+        >
+          {event.summary}{' '}
+          <span className="badge">
+            {moment(event.start.dateTime).format('h:mm a')},{' '}
+            {moment(event.end.dateTime).diff(moment(event.start.dateTime), 'minutes')}{' '}
+            minutes, {moment(event.start.dateTime).format('MMMM Do')}{' '}
+          </span>
+        </a>
+      );
+    });
+
+    let emptyState = (
+      <div className="empty">
+        <h3>No meetings are scheduled for the day.</h3>
+      </div>
+    );
+
+    let loadingState = <div className="loading">Loading Calendar</div>;
+
+    let nextEvent;
+    console.log('events :', events);
     if (events.length > 0) nextEvent = events[0];
 
+    console.log('nextEvent :', nextEvent);
     return (
-      <div className="AppBody">
-        <div className="parallax-container parallax-container-landing">
-          <h3 className="landing-image-overlay-text">
-            THE SOCIETY OF HISPANIC PROFESSIONAL ENGINEERS
-            <br />
-            <span className="border-top">University of California, Irvine</span>
-          </h3>
-
-          <div className="parallax">
-            <img
-              src="https://clubs.uci.edu/shpe/wp-content/uploads/2018/05/29683835_1699696656746576_4596213576617751783_n.jpg"
-              alt="SHPE Group Portrait"
-            />
+      <div className="container">
+        <div className="upcoming-meetings">
+          <h1>Upcoming Meetings</h1>
+          <div className="list-group">
+            {this.state.isLoading && loadingState}
+            {/* {events.length > 0 && eventsList} */}
+            {nextEvent && nextEvent.summary}
+            {this.state.isEmpty && emptyState}
           </div>
-        </div>
-
-        <h2 className="header center z-depth-2 page-banner">
-          Next Event:
-          {this.state.isLoading && ' Loading Calendar...'}
-          {nextEvent && ' ' + nextEvent.summary}
-          {this.state.isEmpty && ' No events are scheduled for the day'}
-        </h2>
-
-        <div className="container">
-          <div id="calendar" />
         </div>
       </div>
     );
   }
 }
-
-export default Home;

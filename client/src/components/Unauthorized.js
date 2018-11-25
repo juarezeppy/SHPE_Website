@@ -22,7 +22,6 @@ class Unauthorized extends Component {
   }
 
   componentWillUnmount() {
-    console.log('unmounting');
     if (this.timerIntervalFunction) clearInterval(this.timerIntervalFunction);
   }
 

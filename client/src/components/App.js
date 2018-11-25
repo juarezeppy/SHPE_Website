@@ -10,6 +10,7 @@ import About from './About';
 import Committees from './Committees';
 import Contact from './Contact';
 import Unauthorized from './Unauthorized';
+import Calendar from './Calendar';
 import '../app.css';
 
 class App extends Component {
@@ -61,6 +62,7 @@ class App extends Component {
               <Route path="/committees" component={Committees} />
               <Route path="/contact" component={Contact} />
               <Route path="/unauthorized" component={Unauthorized} />
+              <Route path="/calendar" component={Calendar} />
               <Redirect to="/" />
             </Switch>
           </main>
