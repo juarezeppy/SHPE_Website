@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class Unauthorized extends Component {
   constructor(props, context) {
@@ -31,8 +31,8 @@ class Unauthorized extends Component {
     const { countDown } = this.state;
 
     if (countDown === 0) {
-      window.location.href = '/';
-      // return <Redirect to="/" />; //<--- should switch to this after calendar is implemented in ract
+      // window.location.href = '/';
+      return <Redirect to="/" />; //<--- should switch to this after calendar is implemented in ract
     }
 
     return (

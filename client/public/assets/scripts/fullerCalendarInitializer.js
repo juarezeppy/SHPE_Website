@@ -9,14 +9,14 @@ $(function() {
     googleCalendarApiKey: 'AIzaSyCBwYKAqvh2LG_hhO8FAXTBPxyHX16TmMI',
     events: {
       googleCalendarId: 'uci.edu_tjec7ma8ubkrlhhbjk89u7c7ec@group.calendar.google.com',
-      className: 'gcal-event', // an option!
+      className: 'gcal-event' // an option!
     },
     eventColor: '#455a64',
     header: {
       left: 'prev',
       center: 'title',
       // right: 'month,agendaWeek,agendaDay'
-      right: 'next',
+      right: 'next'
     },
     editable: false,
 
@@ -79,7 +79,7 @@ $(function() {
     // NOT when cursor moves away from the tooltip
     eventMouseout: function(event, jsEvent) {
       // console.log("mouseout of event");
-    },
+    }
   });
 
   let element = $(document)
@@ -98,7 +98,7 @@ $(document).on(
   {
     mouseleave: function() {
       $('.tool-tip-event').remove();
-    },
+    }
   },
   '.tool-tip-event'
 );

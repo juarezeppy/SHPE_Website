@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   renderContent() {
@@ -7,10 +8,16 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return <li><a href="/auth/google">Login With Google</a></li>;
+        return (
+          <li>
+            <a href="/auth/google">Login With Google</a>
+          </li>
+        );
       default:
         return [
-          <li key="2"><a href="/api/logout">Logout</a></li>
+          <li key="2">
+            <a href="/api/logout">Logout</a>
+          </li>
         ];
     }
   }
@@ -19,23 +26,27 @@ class Header extends Component {
     return (
       <nav className="blue-grey darken-3 sticky-menu">
         <div className="nav-wrapper">
-        <a href="/" className="brand-logo">
+          <Link to="/" className="brand-logo">
             SHPE | UCI
-          </a>
+          </Link>
 
           <a href="#!" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons">menu</i>
           </a>
           <ul className="right hide-on-med-and-down">
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/committees">Get Involved</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/committees">Get Involved</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
             {this.renderContent()}
           </ul>
         </div>
       </nav>
-
-    
     );
   }
 }

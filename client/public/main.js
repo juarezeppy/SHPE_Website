@@ -46,7 +46,7 @@ $(document).ready(function() {
       /** ****/ /** ****/ const module = (installedModules[moduleId] = {
         /** ****/ i: moduleId,
         /** ****/ l: false,
-        /** ****/ exports: {},
+        /** ****/ exports: {}
         /** ****/
       }); // Execute the module function
       /** ****/
@@ -73,7 +73,7 @@ $(document).ready(function() {
         /** ****/ Object.defineProperty(exports, name, {
           /** ****/ configurable: false,
           /** ****/ enumerable: true,
-          /** ****/ get: getter,
+          /** ****/ get: getter
           /** ****/
         });
         /** ****/
@@ -120,12 +120,12 @@ https://github.com/Microsoft/tslib/blob/v1.6.0/tslib.js
 only include the helpers we need, to keep down filesize
 */
         const extendStatics =
-          Object.setPrototypeOf
-          || ({ __proto__: [] } instanceof Array
-            && function(d, b) {
+          Object.setPrototypeOf ||
+          ({ __proto__: [] } instanceof Array &&
+            function(d, b) {
               d.__proto__ = b;
-            })
-          || function(d, b) {
+            }) ||
+          function(d, b) {
             for (const p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
           };
         exports.__extends = function(d, b) {
@@ -209,7 +209,7 @@ only include the helpers we need, to keep down filesize
                         successRes = fullcalendar_1.applyAll(onSuccess, _this, [
                           responseData,
                           status,
-                          xhr,
+                          xhr
                         ]); // passthru
                         if ($.isArray(successRes)) {
                           rawEventDefs = successRes;
@@ -224,7 +224,7 @@ only include the helpers we need, to keep down filesize
                       );
                       _this.calendar.popLoading();
                       onReject();
-                    },
+                    }
                   }
                 )
               );
@@ -252,7 +252,7 @@ only include the helpers we need, to keep down filesize
               end: item.end.dateTime || item.end.date,
               // url: url,
               location: item.location,
-              description: item.description,
+              description: item.description
             };
           };
           GcalEventSource.prototype.buildUrl = function() {
@@ -294,7 +294,7 @@ only include the helpers we need, to keep down filesize
               timeMin: start.format(),
               timeMax: end.format(),
               singleEvents: true,
-              maxResults: 9999,
+              maxResults: 9999
             });
             if (timezone && timezone !== 'local') {
               // when sending timezone names to Google, only accepts underscores, not spaces
@@ -349,7 +349,7 @@ only include the helpers we need, to keep down filesize
           googleCalendarId: false,
           // automatically transfer...
           googleCalendarApiKey: true,
-          googleCalendarError: true,
+          googleCalendarError: true
         });
         function parseGoogleCalendarId(url) {
           let match;
@@ -360,8 +360,8 @@ only include the helpers we need, to keep down filesize
           } else if (
             (match = /^https:\/\/www.googleapis.com\/calendar\/v3\/calendars\/([^\/]*)/.exec(
               url
-            ))
-            || (match = /^https?:\/\/www.google.com\/calendar\/feeds\/([^\/]*)/.exec(url))
+            )) ||
+            (match = /^https?:\/\/www.google.com\/calendar\/feeds\/([^\/]*)/.exec(url))
           ) {
             return decodeURIComponent(match[1]);
           }
@@ -381,7 +381,7 @@ only include the helpers we need, to keep down filesize
         module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 
         /** */
-      },
+      }
 
       /** ****/
     }
