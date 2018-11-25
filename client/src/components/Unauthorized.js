@@ -31,8 +31,7 @@ class Unauthorized extends Component {
     const { countDown } = this.state;
 
     if (countDown === 0) {
-      // window.location.href = '/';
-      return <Redirect to="/" />; //<--- should switch to this after calendar is implemented in ract
+      return <Redirect to="/" />;
     }
 
     return (
