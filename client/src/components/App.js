@@ -10,7 +10,7 @@ import About from './About';
 import Committees from './Committees';
 import Contact from './Contact';
 import Unauthorized from './Unauthorized';
-import Calendar from './Calendar';
+import Calendar from './CalendarEvents';
 import '../app.css';
 
 class App extends Component {
