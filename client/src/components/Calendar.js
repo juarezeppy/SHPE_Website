@@ -109,7 +109,7 @@ export default class App extends Component {
           <h1>Upcoming Meetings</h1>
           <div className="list-group">
             {this.state.isLoading && loadingState}
-            {/* {events.length > 0 && eventsList} */}
+            {events.length > 0 && eventsList}
             {nextEvent && nextEvent.summary}
             {this.state.isEmpty && emptyState}
           </div>
