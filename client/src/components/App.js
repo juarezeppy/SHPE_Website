@@ -28,11 +28,11 @@ class App extends Component {
           </li>
         );
       default:
-        return [
-          <li key="2">
+        return (
+          <li>
             <a href="/api/logout">Logout</a>
           </li>
-        ];
+        );
     }
   }
 

@@ -15,7 +15,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="col l4 offset-l2 s12">
-            <h5 className="white-text">Links</h5>
+            <h5 className="white-text">Resources</h5>
             <ul className="list-unstyled">
               <li>
                 <a href="http://uci.edu/" target="_blank" rel="noopener noreferrer">
@@ -64,7 +64,9 @@ const Footer = () => {
       </div>
       <div className="footer-copyright">
         <div className="container">
-          <ul className="valign-wrapper left"><span className="copy-right">Copyright &copy; 2018 SHPE UCI</span></ul>
+          <ul className="valign-wrapper left">
+            <span className="copy-right">Copyright &copy; 2018 SHPE UCI</span>
+          </ul>
           <ul className="valign-wrapper right social-icons">
             <li>
               <a
