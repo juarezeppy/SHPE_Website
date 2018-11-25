@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import '../app.css';
 
 class NextEvent extends Component {
   constructor(props) {
@@ -77,7 +78,7 @@ class NextEvent extends Component {
 
     return (
       <h2 className="header center z-depth-2 page-banner">
-        Next Event:
+        Next Event: <br className="next-event-br" />
         {this.state.isLoading && ' Loading Calendar...'}
         {nextEvent && ' ' + nextEvent.summary}
         {this.state.isEmpty && ' No events are scheduled for the day'}

@@ -1,6 +1,6 @@
 @media screen and (max-width: 400px) {
   .copy-right {
-    font-size: .625em;
+    font-size: 0.625em;
   }
 }
 
@@ -14,7 +14,7 @@
   }
 
   .copy-right {
-    font-size: .725em;
+    font-size: 0.725em;
   }
 }
 
@@ -28,6 +28,9 @@
   }
 }
 
-/*Mediun Screens*/
-@media screen and (max-width: 768px) {
+/*Mediun to large Screens*/
+@media screen and (min-width: 768px) {
+  .next-event-br {
+    display: none;
+  }
 }
