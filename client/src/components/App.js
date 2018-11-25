@@ -9,6 +9,7 @@ import Home from './Home';
 import About from './About';
 import Committees from './Committees';
 import Contact from './Contact';
+import Unauthorized from './Unauthorized';
 import '../app.css';
 
 class App extends Component {
@@ -21,19 +22,25 @@ class App extends Component {
       case null:
         return;
       case false:
-        return <li><a href="/auth/google">Login With Google</a></li>;
+        return (
+          <li>
+            <a href="/auth/google">Login With Google</a>
+          </li>
+        );
       default:
         return [
-          <li key="2"><a href="/api/logout">Logout</a></li>
+          <li key="2">
+            <a href="/api/logout">Logout</a>
+          </li>
         ];
     }
   }
 
   render() {
     return (
-      <div>
+      <div className="app">
         <BrowserRouter>
-          <div>
+          <main>
             <Header />
             {/* mobile links */}
             <ul className="sidenav" id="mobile-demo">
@@ -53,11 +60,12 @@ class App extends Component {
               <Route path="/About" component={About} />
               <Route path="/committees" component={Committees} />
               <Route path="/contact" component={Contact} />
-              <Redirect to="/" />	
+              <Route path="/unauthorized" component={Unauthorized} />
+              <Redirect to="/" />
             </Switch>
-          </div>
+          </main>
         </BrowserRouter>
-        <Footer/>
+        <Footer />
       </div>
     );
   }
@@ -67,4 +75,7 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps, actions)(App);
+export default connect(
+  mapStateToProps,
+  actions
+)(App);

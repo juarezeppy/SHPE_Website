@@ -1,6 +1,6 @@
 const passport = require('passport');
 
-module.exports = app => {
+module.exports = (app) => {
   app.get(
     '/auth/google',
     passport.authenticate('google', {
@@ -8,24 +8,18 @@ module.exports = app => {
     })
   );
 
-  app.get(
-    '/auth/google/callback',
-    passport.authenticate('google'),
-    (req, res) => {
+  app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
+    const { email } = req.user;
+    console.log('userEmail :', email);
 
-      const {email} = req.user;
-      console.log('userEmail :', email);
-
-      if (email === "invalid") {
-        console.log("invalid email");
-        req.logout();
-        res.redirect('/');
-      }
-      else {
-        res.redirect('/');
-      }
+    if (email === 'invalid') {
+      console.log('invalid email');
+      req.logout();
+      res.redirect('/unauthorized');
+    } else {
+      res.redirect('/');
     }
-  );
+  });
 
   app.get('/api/logout', (req, res) => {
     req.logout();
