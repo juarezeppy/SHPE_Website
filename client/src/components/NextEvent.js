@@ -42,6 +42,14 @@ class NextEvent extends Component {
         .then(
           (response) => {
             let events = response.result.items;
+            console.log('response :', response.result.items);
+
+            // 1. Find index of "T"
+            // 2. Create Substring from T+1 to end
+            // 3. Find index of '-'
+            // 4. Create substring from 0 to index of '-'
+            // 5. Now compare this time format to the current time
+
             let sortedEvents = events.sort((a, b) => {
               return (
                 moment(a.start.dateTime).format('YYYYMMDD') -
@@ -73,6 +81,7 @@ class NextEvent extends Component {
   render() {
     const { events } = this.state;
     let nextEvent;
+    console.log('events :', events);
 
     if (events.length > 0) nextEvent = events[0];
 
