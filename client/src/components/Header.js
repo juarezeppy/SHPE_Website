@@ -41,6 +41,12 @@ class Header extends Component {
               <Link to="/committees">Get Involved</Link>
             </li>
             <li>
+              <Link to="/mentorshpe">Mentor program</Link>
+            </li>
+            <li>
+              <Link to="/shpejr">Shpe Jr</Link>
+            </li>
+            <li>
               <Link to="/contact">Contact Us</Link>
             </li>
             {this.renderContent()}

@@ -11,7 +11,10 @@ import Committees from './Committees';
 import Contact from './Contact';
 import Unauthorized from './Unauthorized';
 import Calendar from './CalendarEvents';
+import ShpeJr from './ShpeJr'
+import MentorShpe from './MentorShpe';
 import '../app.css';
+
 
 class App extends Component {
   componentDidMount() {
@@ -52,6 +55,12 @@ class App extends Component {
                 <Link to="/committees">Get Involved</Link>
               </li>
               <li>
+                <Link to="/mentorshpe">Mentor program</Link>
+              </li>
+              <li>
+                <Link to="/shpejr">Shpe Jr</Link>
+              </li>
+              <li>
                 <Link to="/contact">Contact Us</Link>
               </li>
               {this.renderContent()}
@@ -63,6 +72,8 @@ class App extends Component {
               <Route path="/contact" component={Contact} />
               <Route path="/unauthorized" component={Unauthorized} />
               <Route path="/calendar" component={Calendar} />
+              <Route path="/shpejr" component={ShpeJr} />
+              <Route path="/mentorshpe" component={MentorShpe} />
               <Redirect to="/" />
             </Switch>
           </main>
