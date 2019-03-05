@@ -85,4 +85,18 @@ main {
   flex: 1 0 auto;
 }
 
+.parallax-container-ShpeJr {
+  
+
+  background-attachment: fixed;
+  background-position-y: 30%;
+  background-repeat: no-repeat no-repeat;
+  background-size: cover;
+  filter: drop-shadow();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 @import './mediaQueries.css';
