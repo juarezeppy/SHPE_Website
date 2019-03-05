@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // initialize the mobile sidebar
   $('.sidenav').sidenav({ edge: 'right' });
 
@@ -12,11 +12,6 @@ $(document).ready(function () {
   $('.parallax').parallax();
 
   $('.tooltipped').tooltip();
-  $('.carousel').carousel();
-  $('.carousel.carousel-slider').carousel({
-    fullWidth: true
-  });
-
 });
 
 /* !
@@ -32,11 +27,11 @@ $(document).ready(function () {
   } else if (typeof exports === 'object') {
     factory(require('fullcalendar'), require('jquery'));
   } else factory(root['FullCalendar'], root['jQuery']);
-})(typeof self !== 'undefined' ? self : this, function (
+})(typeof self !== 'undefined' ? self : this, function(
   __WEBPACK_EXTERNAL_MODULE_1__,
   __WEBPACK_EXTERNAL_MODULE_3__
 ) {
-  return /** ****/ (function (modules) {
+  return /** ****/ (function(modules) {
     // webpackBootstrap
     /** ****/ // The module cache
     /** ****/ const installedModules = {}; // The require function
@@ -73,7 +68,7 @@ $(document).ready(function () {
     /** ****/
     /** ****/ /** ****/ __webpack_require__.c = installedModules; // define getter function for harmony exports
     /** ****/
-    /** ****/ /** ****/ __webpack_require__.d = function (exports, name, getter) {
+    /** ****/ /** ****/ __webpack_require__.d = function(exports, name, getter) {
       /** ****/ if (!__webpack_require__.o(exports, name)) {
         /** ****/ Object.defineProperty(exports, name, {
           /** ****/ configurable: false,
@@ -86,21 +81,21 @@ $(document).ready(function () {
       /** ****/
     }; // getDefaultExport function for compatibility with non-harmony modules
     /** ****/
-    /** ****/ /** ****/ __webpack_require__.n = function (module) {
+    /** ****/ /** ****/ __webpack_require__.n = function(module) {
       /** ****/ const getter =
         module && module.__esModule
           ? /** ****/ function getDefault() {
-            return module['default'];
-          }
+              return module['default'];
+            }
           : /** ****/ function getModuleExports() {
-            return module;
-          };
+              return module;
+            };
       /** ****/ __webpack_require__.d(getter, 'a', getter);
       /** ****/ return getter;
       /** ****/
     }; // Object.prototype.hasOwnProperty.call
     /** ****/
-    /** ****/ /** ****/ __webpack_require__.o = function (object, property) {
+    /** ****/ /** ****/ __webpack_require__.o = function(object, property) {
       return Object.prototype.hasOwnProperty.call(object, property);
     }; // __webpack_public_path__
     /** ****/
@@ -111,13 +106,13 @@ $(document).ready(function () {
   })(
     /** **********************************************************************/
     /** ****/ {
-      /** */ 1: /** */ function (module, exports) {
+      /** */ 1: /** */ function(module, exports) {
         module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
         /** */
       },
 
-      /** */ 2: /** */ function (module, exports) {
+      /** */ 2: /** */ function(module, exports) {
         /*
 derived from:
 https://github.com/Microsoft/tslib/blob/v1.6.0/tslib.js
@@ -127,13 +122,13 @@ only include the helpers we need, to keep down filesize
         const extendStatics =
           Object.setPrototypeOf ||
           ({ __proto__: [] } instanceof Array &&
-            function (d, b) {
+            function(d, b) {
               d.__proto__ = b;
             }) ||
-          function (d, b) {
+          function(d, b) {
             for (const p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
           };
-        exports.__extends = function (d, b) {
+        exports.__extends = function(d, b) {
           extendStatics(d, b);
           function __() {
             this.constructor = d;
@@ -145,7 +140,7 @@ only include the helpers we need, to keep down filesize
         /** */
       },
 
-      /** */ 266: /** */ function (module, exports, __webpack_require__) {
+      /** */ 266: /** */ function(module, exports, __webpack_require__) {
         Object.defineProperty(exports, '__esModule', { value: true });
         const exportHooks = __webpack_require__(1);
         const GcalEventSource_1 = __webpack_require__(267);
@@ -155,17 +150,17 @@ only include the helpers we need, to keep down filesize
         /** */
       },
 
-      /** */ 267: /** */ function (module, exports, __webpack_require__) {
+      /** */ 267: /** */ function(module, exports, __webpack_require__) {
         Object.defineProperty(exports, '__esModule', { value: true });
         const tslib_1 = __webpack_require__(2);
         const $ = __webpack_require__(3);
         const fullcalendar_1 = __webpack_require__(1);
-        const GcalEventSource = /** @class */ (function (_super) {
+        const GcalEventSource = /** @class */ (function(_super) {
           tslib_1.__extends(GcalEventSource, _super);
           function GcalEventSource() {
             return (_super !== null && _super.apply(this, arguments)) || this;
           }
-          GcalEventSource.parse = function (rawInput, calendar) {
+          GcalEventSource.parse = function(rawInput, calendar) {
             let rawProps;
             if (typeof rawInput === 'object') {
               rawProps = rawInput;
@@ -177,7 +172,7 @@ only include the helpers we need, to keep down filesize
             }
             return false;
           };
-          GcalEventSource.prototype.fetch = function (start, end, timezone) {
+          GcalEventSource.prototype.fetch = function(start, end, timezone) {
             const _this = this;
             const url = this.buildUrl();
             const requestParams = this.buildRequestParams(start, end, timezone);
@@ -187,7 +182,7 @@ only include the helpers we need, to keep down filesize
               return fullcalendar_1.Promise.reject();
             }
             this.calendar.pushLoading();
-            return fullcalendar_1.Promise.construct(function (onResolve, onReject) {
+            return fullcalendar_1.Promise.construct(function(onResolve, onReject) {
               $.ajax(
                 $.extend(
                   {}, // destination
@@ -196,7 +191,7 @@ only include the helpers we need, to keep down filesize
                   {
                     url: url,
                     data: requestParams,
-                    success: function (responseData, status, xhr) {
+                    success: function(responseData, status, xhr) {
                       let rawEventDefs;
                       let successRes;
                       _this.calendar.popLoading();
@@ -222,7 +217,7 @@ only include the helpers we need, to keep down filesize
                         onResolve(_this.parseEventDefs(rawEventDefs));
                       }
                     },
-                    error: function (xhr, statusText, errorThrown) {
+                    error: function(xhr, statusText, errorThrown) {
                       _this.reportError(
                         'Google Calendar network failure: ' + statusText,
                         [xhr, errorThrown]
@@ -235,16 +230,16 @@ only include the helpers we need, to keep down filesize
               );
             });
           };
-          GcalEventSource.prototype.gcalItemsToRawEventDefs = function (
+          GcalEventSource.prototype.gcalItemsToRawEventDefs = function(
             items,
             gcalTimezone
           ) {
             const _this = this;
-            return items.map(function (item) {
+            return items.map(function(item) {
               return _this.gcalItemToRawEventDef(item, gcalTimezone);
             });
           };
-          GcalEventSource.prototype.gcalItemToRawEventDef = function (item, gcalTimezone) {
+          GcalEventSource.prototype.gcalItemToRawEventDef = function(item, gcalTimezone) {
             let url = item.htmlLink || null;
             // make the URLs for each event show times in the correct timezone
             if (url && gcalTimezone) {
@@ -260,7 +255,7 @@ only include the helpers we need, to keep down filesize
               description: item.description
             };
           };
-          GcalEventSource.prototype.buildUrl = function () {
+          GcalEventSource.prototype.buildUrl = function() {
             return (
               GcalEventSource.API_BASE +
               '/' +
@@ -268,7 +263,7 @@ only include the helpers we need, to keep down filesize
               '/events?callback=?'
             ); // jsonp
           };
-          GcalEventSource.prototype.buildRequestParams = function (start, end, timezone) {
+          GcalEventSource.prototype.buildRequestParams = function(start, end, timezone) {
             const apiKey =
               this.googleCalendarApiKey || this.calendar.opt('googleCalendarApiKey');
             let params;
@@ -307,7 +302,7 @@ only include the helpers we need, to keep down filesize
             }
             return params;
           };
-          GcalEventSource.prototype.reportError = function (message, apiErrorObjs) {
+          GcalEventSource.prototype.reportError = function(message, apiErrorObjs) {
             const calendar = this.calendar;
             const calendarOnError = calendar.opt('googleCalendarError');
             const errorObjs = apiErrorObjs || [{ message: message }]; // to be passed into error handlers
@@ -320,10 +315,10 @@ only include the helpers we need, to keep down filesize
             // print error to debug console
             fullcalendar_1.warn.apply(null, [message].concat(apiErrorObjs || []));
           };
-          GcalEventSource.prototype.getPrimitive = function () {
+          GcalEventSource.prototype.getPrimitive = function() {
             return this.googleCalendarId;
           };
-          GcalEventSource.prototype.applyManualStandardProps = function (rawProps) {
+          GcalEventSource.prototype.applyManualStandardProps = function(rawProps) {
             const superSuccess = fullcalendar_1.EventSource.prototype.applyManualStandardProps.apply(
               this,
               arguments
@@ -338,7 +333,7 @@ only include the helpers we need, to keep down filesize
             }
             return false;
           };
-          GcalEventSource.prototype.applyMiscProps = function (rawProps) {
+          GcalEventSource.prototype.applyMiscProps = function(rawProps) {
             if (!this.ajaxSettings) {
               this.ajaxSettings = {};
             }
@@ -374,7 +369,7 @@ only include the helpers we need, to keep down filesize
         // Injects a string like "arg=value" into the querystring of a URL
         function injectQsComponent(url, component) {
           // inject it after the querystring but before the fragment
-          return url.replace(/(\?.*?)?(#|$)/, function (whole, qs, hash) {
+          return url.replace(/(\?.*?)?(#|$)/, function(whole, qs, hash) {
             return (qs ? qs + '&' : '?') + component + hash;
           });
         }
@@ -382,7 +377,7 @@ only include the helpers we need, to keep down filesize
         /** */
       },
 
-      /** */ 3: /** */ function (module, exports) {
+      /** */ 3: /** */ function(module, exports) {
         module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 
         /** */

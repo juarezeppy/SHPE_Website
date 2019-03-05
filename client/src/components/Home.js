@@ -3,7 +3,7 @@ import NextEvent from './NextEvent';
 import Calendar from './Calendar';
 
 class Home extends Component {
-  componentWillMount() { }
+  componentWillMount() {}
 
   render() {
     return (
